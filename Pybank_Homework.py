@@ -116,7 +116,31 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# The average Profit & Loss Over the defined time period\n"
+    "# The average Profit & Loss Over the defined time period\n",
+    "\n",
+    "total_amount = budget_report[0][1]\n",
+    "average_sum = 0.00\n",
+    "previous_month = budget_report[0][1]\n",
+    "previous_month_text = budget_report[0][0]\n",
+    "greatest_increase = previous_month\n",
+    "greatest_increase_text = previous_month_text\n",
+    "greatest_loss_amount = 0\n",
+    "\n",
+    "for month in budget_report[1:]:\n",
+    "    current_month_pl = month[1]\n",
+    "    current_month_text = month[0]\n",
+    "    \n",
+    "    total_amount += current_month_pl\n",
+    "    \n",
+    "    different_between_months = current_month_pl - previous_month\n",
+    "    average_sum += different_between_months\n",
+    "    \n",
+    "    previous_month = current_month_pl\n",
+    "    previous_month_text = current_month_text\n",
+    "    \n",
+    "print(f\"Total amount loop: {total_amount})\n",
+    "print(f\"The average Profit & Loss change is: {round(average_sum)})\n",
+    "\n"
    ]
   }
  ],
