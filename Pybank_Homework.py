@@ -111,10 +111,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 20,
    "id": "bc736da8-a5dc-4392-936b-92bf70c03893",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Financial Analysis\n",
+      "------------------------------------------------------------\n",
+      "Total Net P&L: $38382578\n",
+      "The average Profit & Loss change is: $-196785\n"
+     ]
+    }
+   ],
    "source": [
     "# The average Profit & Loss Over the defined time period\n",
     "\n",
@@ -137,11 +148,20 @@
     "    \n",
     "    previous_month = current_month_pl\n",
     "    previous_month_text = current_month_text\n",
-    "    \n",
-    "print(f\"Total amount loop: {total_amount})\n",
-    "print(f\"The average Profit & Loss change is: {round(average_sum)})\n",
-    "\n"
+    "\n",
+    "print(\"Financial Analysis\")\n",
+    "print(\"------------------------------------------------------------\")\n",
+    "print(f\"Total Net P&L: ${net_total}\")\n",
+    "print(f\"The average Profit & Loss change is: ${round(average_sum)}\")"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "148bafd9-0145-4e42-b07d-3433ba632a9d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
