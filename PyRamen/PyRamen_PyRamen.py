@@ -57,8 +57,18 @@ report = {}
 row_count = 0
 
 # @TODO: Loop over every row in the sales list object
-
-
+for sale_line in sales:
+    quantity = sale_line[3]
+    menu_item = sale_line[4]
+    
+    for menu_item in menu:
+        item = menu_item[0]
+        price = menu_item[3]
+        cost = menu_item[4]
+        
+        if item not in report.keys():
+            item_sales_dict = {"01-count": quantity,"02-revenue": price * quantity,"03-cogs": cost * quantity,"04-profit": price * quantity}
+            print(f"item: {item}, dictionary: {item_sales_dict}")
 
     # Line_Item_ID,Date,Credit_Card_Number,Quantity,Menu_Item
     # @TODO: Initialize sales data variables
