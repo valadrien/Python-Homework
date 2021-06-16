@@ -53,6 +53,7 @@ for month in budget_report[1:]:
     previous_month = current_month_pl
     previous_month_text = current_month_text
     
+    
 # Identifying the greatest month profit increase and it's value
     if difference_between_months > greatest_increase:
         greatest_increase = difference_between_months
@@ -66,8 +67,22 @@ for month in budget_report[1:]:
 # Print Resulsts as illusrated format 😎
 print("Financial Analysis")
 print("------------------------------------------------------------")
+print(f"The total period in report is: {total_months} months")
 print(f"Net Total P&L is: $ {net_total}")
 print(f"The average change rate is: $ {round(average_sum/(total_months-1),2)}")
 print(f"Greatest Increase in Profits happened in: {greatest_increase_month} ($ {greatest_increase})")
 print(f"Greatest Decrease in Profits happened in: {greatest_loss_month} ($ {greatest_loss})")
 
+## Print the analysis to the terminal and export a text file with the results.
+#set the output of the text file
+text_path = "output.txt"
+
+#write changes to csv
+with open(text_path, 'w') as file:
+    file.write("Financial Analysis\n")
+    file.write("---------------------\n")
+    file.write("Total Months: %d\n" % total_months)
+    file.write("Net Total P&L is: $%d\n" % net_total)
+    file.write("The average change rate is $%d\n" % round(average_sum/(total_months-1),2))
+    file.write("Greatest Increase in Revenue: %s ($%s)\n" % (greatest_increase[0], greatest_increase[1]))
+    file.write("Greatest Decrease in Revenue: %s ($%s)\n" % (greatest_decrease[0], greatest_decrease[1]))
